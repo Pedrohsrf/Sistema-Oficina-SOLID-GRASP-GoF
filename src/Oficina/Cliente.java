@@ -1,22 +1,29 @@
 package Oficina;
 
 public class Cliente {
+    private int idCliente;
     private String nome;
     private String cpf;
     private String telefone;
     private Veiculo veiculo;
-    private Double saldo;
+    private double saldo;
 
-    public Cliente(String nome, String cpf, String telefone, Veiculo veiculo) {
+    public Cliente(int idCliente, String nome, String cpf, String telefone, Veiculo veiculo) {
+        this.idCliente = idCliente;
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.veiculo = veiculo;
     }
+    public int getIdCliente() {return idCliente;}
 
-    public String getNome() {
-        return nome;
-    }
+    public void setIdCliente(int idCliente) {this.idCliente = idCliente;}
+
+    public Double getSaldo() {return saldo;}
+
+    public void setSaldo(Double saldo) {this.saldo = saldo;}
+
+    public String getNome() {return nome;}
 
     public void setNome(String nome) {
         this.nome = nome;

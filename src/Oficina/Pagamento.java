@@ -1,4 +1,5 @@
 package Oficina;
 
-public class Pagamento {
+public interface Pagamento {
+    public void pagar(double valor);
 }

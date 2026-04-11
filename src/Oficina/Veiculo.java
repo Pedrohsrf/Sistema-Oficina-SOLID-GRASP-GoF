@@ -1,6 +1,6 @@
 package Oficina;
 
-public class Veiculo {
+public abstract class Veiculo {
     private String marca;
     private String modelo;
     private String cor;
@@ -74,4 +74,8 @@ public class Veiculo {
     public void setAno(String ano) {
         this.ano = ano;
     }
+
+    public abstract void descricao();
+    public abstract void ligar();
+    public abstract void desligar();
 }
