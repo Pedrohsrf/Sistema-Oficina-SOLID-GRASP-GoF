@@ -1,7 +1,6 @@
 package Oficina;
 
 public class ControllerServico {
-
     public void executarServico(Servico servico){
         servico.executar();
     }

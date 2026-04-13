@@ -27,17 +27,6 @@ public class Servico {
         this.pago = false;
     }
 
-    public void executar(){
-        for(Problema problema: listaProblemas){
-        System.out.println("Problema "+problema.getDescricao() +" resolvido!");
-        }
-    }
-
-    public void pagar(double valor){
-        pagamento.pagar(valor);
-        this.pago = true;
-    }
-
     public int getIdServico() {
         return idServico;
     }
@@ -109,4 +98,17 @@ public class Servico {
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
+
+    public void executar(){
+        for(Problema problema: listaProblemas){
+        System.out.println("Problema "+problema.getDescricao() +" resolvido!");
+        }
+    }
+
+    public void pagar(double valor){
+        pagamento.pagar(valor);
+        this.pago = true;
+    }
+
+
 }

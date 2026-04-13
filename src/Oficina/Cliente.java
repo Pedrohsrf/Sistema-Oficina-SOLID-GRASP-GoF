@@ -15,15 +15,25 @@ public class Cliente {
         this.telefone = telefone;
         this.veiculo = veiculo;
     }
-    public int getIdCliente() {return idCliente;}
+    public int getIdCliente() {
+        return idCliente;
+    }
 
-    public void setIdCliente(int idCliente) {this.idCliente = idCliente;}
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
 
-    public Double getSaldo() {return saldo;}
+    public Double getSaldo() {
+        return saldo;
+    }
 
-    public void setSaldo(Double saldo) {this.saldo = saldo;}
+    public void setSaldo(Double saldo) {
+        this.saldo = saldo;
+    }
 
-    public String getNome() {return nome;}
+    public String getNome() {
+        return nome;
+    }
 
     public void setNome(String nome) {
         this.nome = nome;
