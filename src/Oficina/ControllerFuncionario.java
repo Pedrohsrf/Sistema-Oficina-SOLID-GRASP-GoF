@@ -6,7 +6,7 @@ public class ControllerFuncionario {
         funcionario.atribuirServico(servico);
     }
 
-    public void finalizarServico(Funcionario funcionario){
-        funcionario.finalizarServico();
+    public void finalizarServico(Funcionario funcionario, Servico servico){
+        funcionario.finalizarServico(servico);
     }
 }

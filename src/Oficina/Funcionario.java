@@ -75,9 +75,10 @@ public class Funcionario {
         this.disponibilidade = false;
     }
 
-    public void finalizarServico() {
+    public void finalizarServico(Servico servico) {
         if(!this.disponibilidade){
             this.disponibilidade = true;
+            this.comissaoAcumulada += servico.getPreco()* 0.2;
         }
     }
 }

@@ -6,7 +6,6 @@ public class Cliente {
     private String cpf;
     private String telefone;
     private Veiculo veiculo;
-    private double saldo;
 
     public Cliente(int idCliente, String nome, String cpf, String telefone, Veiculo veiculo) {
         this.idCliente = idCliente;
@@ -21,14 +20,6 @@ public class Cliente {
 
     public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
-    }
-
-    public Double getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(Double saldo) {
-        this.saldo = saldo;
     }
 
     public String getNome() {

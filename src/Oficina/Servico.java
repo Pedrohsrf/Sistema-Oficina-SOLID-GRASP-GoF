@@ -109,6 +109,4 @@ public class Servico {
         pagamento.pagar(valor);
         this.pago = true;
     }
-
-
 }

@@ -17,7 +17,7 @@ public class OficinaFacade {
     }
 
     public void finalizarEPagarServico(Funcionario funcionario,Servico servico) {
-        controllerFuncionario.finalizarServico(funcionario);
+        controllerFuncionario.finalizarServico(funcionario, servico);
         controllerServico.pagarServico(servico);
     }
     // comentar na apresentação sobre a duvida sobre o controller  e explicar a hierarquia do sistema
