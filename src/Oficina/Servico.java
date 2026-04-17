@@ -12,8 +12,9 @@ public class Servico {
     private List<Problema> listaProblemas;
     private Pagamento pagamento;
     private Funcionario funcionario;
+    private Cliente cliente;
 
-    public Servico(int idServico, String nome, String codigoServico, double preco, Veiculo veiculoTratado, List<Problema> listaProblemas, Funcionario Funcionario) {
+    public Servico(int idServico, String nome, String codigoServico, double preco, Veiculo veiculoTratado, List<Problema> listaProblemas, Funcionario Funcionario, Cliente cliente) {
         this.idServico = idServico;
         this.nome = nome;
         this.codigoServico = codigoServico;
@@ -21,9 +22,11 @@ public class Servico {
         this.pago = false;
         this.veiculoTratado = veiculoTratado;
         this.listaProblemas = listaProblemas;
+        this.funcionario = Funcionario;
+        this.cliente = cliente;
     }
-    public Servico(int idServico, double preco, Veiculo veiculoTratado, List<Problema> listaProblemas, Funcionario funcionario) {
-        this(idServico, "","", preco , veiculoTratado, listaProblemas, funcionario);
+    public Servico(int idServico, double preco, Veiculo veiculoTratado, List<Problema> listaProblemas, Funcionario funcionario, Cliente cliente) {
+        this(idServico, "","", preco , veiculoTratado, listaProblemas, funcionario, cliente);
         this.pago = false;
     }
 
@@ -106,7 +109,11 @@ public class Servico {
     }
 
     public void pagar(double valor){
-        pagamento.pagar(valor);
-        this.pago = true;
+        if(pago){
+            pagamento.pagar(valor);
+            this.pago = true;
+            System.out.printf("Pago com sucesso por %s id: %d",cliente.getNome(), cliente.getVeiculo());
+        }
+        System.out.printf("Pagamento de R$%.2f não efetuado por %s", valor, cliente.getNome());
     }
 }
