@@ -12,29 +12,18 @@ public class Servico {
     private Funcionario funcionario;
     private Cliente cliente;
 
-<<<<<<< Updated upstream
-    public Servico(int idServico, String nome, String codigoServico, double preco, Veiculo veiculoTratado, List<Problema> listaProblemas, Funcionario Funcionario, Cliente cliente) {
-=======
     public Servico(int idServico, String nome, String codigoServico, double preco, boolean pago, Veiculo veiculoTratado, Problema problema, Funcionario funcionario) {
->>>>>>> Stashed changes
         this.idServico = idServico;
         this.nome = nome;
         this.codigoServico = codigoServico;
         this.preco = preco;
         this.pago = false;
         this.veiculoTratado = veiculoTratado;
-<<<<<<< Updated upstream
-        this.listaProblemas = listaProblemas;
-        this.funcionario = Funcionario;
+        this.funcionario = funcionario;
+        this.problema = problema;
         this.cliente = cliente;
     }
-    public Servico(int idServico, double preco, Veiculo veiculoTratado, List<Problema> listaProblemas, Funcionario funcionario, Cliente cliente) {
-        this(idServico, "","", preco , veiculoTratado, listaProblemas, funcionario, cliente);
-=======
-        this.problema = problema;
-        this.funcionario = funcionario;
-    }
-    public Servico(int idServico, double preco, boolean pago ,Veiculo veiculoTratado, Problema problema, Funcionario funcionario) {
+    public Servico(int idServico, double preco, Veiculo veiculoTratado, Problema problema, Funcionario funcionario) {
         this.idServico = idServico;
         this.nome = nome;
         this.codigoServico = codigoServico;
@@ -43,7 +32,6 @@ public class Servico {
         this.veiculoTratado = veiculoTratado;
         this.problema = problema;
         this.funcionario = funcionario;
->>>>>>> Stashed changes
         this.pago = false;
     }
 
@@ -124,15 +112,12 @@ public class Servico {
     }
 
     public void pagar(double valor){
-<<<<<<< Updated upstream
         if(pago){
             pagamento.pagar(valor);
             this.pago = true;
             System.out.printf("Pago com sucesso por %s id: %d",cliente.getNome(), cliente.getVeiculo());
         }
         System.out.printf("Pagamento de R$%.2f não efetuado por %s", valor, cliente.getNome());
-    }
-=======
         if(pagamento == null){
             System.out.println("Forma de pagamento não definida!");
         }
@@ -141,13 +126,5 @@ public class Servico {
             this.pago = true;
         }
     }
-
-    /* corrigir pagamento para resolver o problema de pagamento == null;
-        sobrecarga
-        adicionar pagamentopix e pagamentocredito em dois construtores diferentes para que aceite as duas formas de pagamento e o pagamento não fique null
-
-     */
-
-
->>>>>>> Stashed changes
 }
+

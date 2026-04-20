@@ -2,8 +2,8 @@ package Oficina;
 
 public class Moto extends Veiculo{
     private int qntCilindradas;
-    public Moto(String marca, String modelo, String cor, String id, String tipo, String placa, String ano, int qntCilindradas) {
-        super(marca, modelo, cor, id, tipo, placa, ano);
+    public Moto(String marca, String modelo, String cor, String id, String motor, String placa, String ano, int qntCilindradas) {
+        super(marca, modelo, cor, id, motor, placa, ano);
         this.qntCilindradas = qntCilindradas;
     }
 

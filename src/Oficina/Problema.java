@@ -4,7 +4,7 @@ public class Problema {
     private String descricao;
     private boolean resolvido;
 
-    public Problema(String descricao, boolean resolvido) {
+    public Problema(String descricao) {
         this.descricao = descricao;
         this.resolvido = false;
     }

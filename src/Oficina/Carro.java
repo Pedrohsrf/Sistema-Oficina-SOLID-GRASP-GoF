@@ -3,8 +3,8 @@ package Oficina;
 
 public class Carro extends Veiculo{
     private int qntsPortas;
-    public Carro(String marca, String modelo, String cor, String id, String tipo, String placa, String ano, int qntsPortas) {
-        super(marca, modelo, cor, id, tipo, placa, ano);
+    public Carro(String marca, String modelo, String cor, String id, String motor, String placa, String ano, int qntsPortas) {
+        super(marca, modelo, cor, id, motor, placa, ano);
         this.qntsPortas = qntsPortas;
     }
 
