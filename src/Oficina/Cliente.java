@@ -7,12 +7,13 @@ public class Cliente {
     private String telefone;
     private Veiculo veiculo;
 
-    public Cliente(int idCliente, String nome, String cpf, String telefone, Veiculo veiculo) {
+    public Cliente(int idCliente, String nome, String cpf, String telefone, Veiculo veiculo, double saldo) {
         this.idCliente = idCliente;
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.veiculo = veiculo;
+        this.saldo = saldo;
     }
     public int getIdCliente() {
         return idCliente;

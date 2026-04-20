@@ -10,7 +10,6 @@ public class Funcionario {
     private boolean disponibilidade;
     private double comissaoAcumulada;
     private String cargo;
-    private List<Servico> listaServicos;
 
     public Funcionario(int idFuncionario,String nome, String cpf, String cargo) {
         this.idFuncionario = idFuncionario;
@@ -19,7 +18,6 @@ public class Funcionario {
         this.disponibilidade = true;
         this.comissaoAcumulada = 0;
         this.cargo = cargo;
-        this.listaServicos = new ArrayList<>();
     }
 
     public String getNome() {
@@ -71,7 +69,6 @@ public class Funcionario {
 
     public void atribuirServico(Servico servico){
         servico.setFuncionario(this);
-        listaServicos.add(servico);
         this.disponibilidade = false;
     }
 

@@ -1,26 +1,34 @@
 package Oficina;
 
-public abstract class Problema {
+public class Problema {
     private String descricao;
     private boolean resolvido;
 
     public Problema(String descricao, boolean resolvido) {
         this.descricao = descricao;
-        this.resolvido = resolvido;
+        this.resolvido = false;
     }
 
     public String getDescricao() {
-        return descricao;
+        return this.descricao;
     }
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public boolean isResolvido() {
-        return resolvido;
+
+    public boolean getResolvido(){
+        return this.resolvido;
+    }
+    public void setResolvido(boolean resolvido) {
+        this.resolvido = true;
     }
 
-    public void setResolvido(boolean resolvido) {
-        this.resolvido = resolvido;
+    @Override
+    public String toString() {
+        return "Problema{" +
+                "descricao='" + descricao + '\'' +
+                ", resolvido=" + resolvido +
+                '}';
     }
 }

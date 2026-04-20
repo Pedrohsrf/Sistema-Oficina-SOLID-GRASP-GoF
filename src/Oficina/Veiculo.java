@@ -5,16 +5,16 @@ public abstract class Veiculo {
     private String modelo;
     private String cor;
     private String id;
-    private String tipo;
+    private String motor;
     private String placa;
     private String ano;
 
-    public Veiculo(String marca, String modelo, String cor, String id, String tipo, String placa, String ano) {
+    public Veiculo(String marca, String modelo, String cor, String id, String motor, String placa, String ano) {
         this.marca = marca;
         this.modelo = modelo;
         this.cor = cor;
         this.id = id;
-        this.tipo = tipo;
+        this.motor = motor;
         this.placa = placa;
         this.ano = ano;
     }
@@ -51,12 +51,12 @@ public abstract class Veiculo {
         this.id = id;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getMotor() {
+        return motor;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setMotor(String tipo) {
+        this.motor = tipo;
     }
 
     public String getPlaca() {

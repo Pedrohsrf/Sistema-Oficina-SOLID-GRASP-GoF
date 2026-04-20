@@ -1,7 +1,5 @@
 package Oficina;
 
-import java.util.List;
-
 public class Servico {
     private int idServico;
     private String nome;
@@ -9,24 +7,43 @@ public class Servico {
     private double preco;
     private boolean pago;
     private Veiculo veiculoTratado;
-    private List<Problema> listaProblemas;
+    private Problema problema;
     private Pagamento pagamento;
     private Funcionario funcionario;
     private Cliente cliente;
 
+<<<<<<< Updated upstream
     public Servico(int idServico, String nome, String codigoServico, double preco, Veiculo veiculoTratado, List<Problema> listaProblemas, Funcionario Funcionario, Cliente cliente) {
+=======
+    public Servico(int idServico, String nome, String codigoServico, double preco, boolean pago, Veiculo veiculoTratado, Problema problema, Funcionario funcionario) {
+>>>>>>> Stashed changes
         this.idServico = idServico;
         this.nome = nome;
         this.codigoServico = codigoServico;
         this.preco = preco;
         this.pago = false;
         this.veiculoTratado = veiculoTratado;
+<<<<<<< Updated upstream
         this.listaProblemas = listaProblemas;
         this.funcionario = Funcionario;
         this.cliente = cliente;
     }
     public Servico(int idServico, double preco, Veiculo veiculoTratado, List<Problema> listaProblemas, Funcionario funcionario, Cliente cliente) {
         this(idServico, "","", preco , veiculoTratado, listaProblemas, funcionario, cliente);
+=======
+        this.problema = problema;
+        this.funcionario = funcionario;
+    }
+    public Servico(int idServico, double preco, boolean pago ,Veiculo veiculoTratado, Problema problema, Funcionario funcionario) {
+        this.idServico = idServico;
+        this.nome = nome;
+        this.codigoServico = codigoServico;
+        this.preco = preco;
+        this.pago = false;
+        this.veiculoTratado = veiculoTratado;
+        this.problema = problema;
+        this.funcionario = funcionario;
+>>>>>>> Stashed changes
         this.pago = false;
     }
 
@@ -78,12 +95,12 @@ public class Servico {
         this.veiculoTratado = veiculoTratado;
     }
 
-    public List<Problema> getListaProblemas() {
-        return listaProblemas;
+    public Problema getproblema() {
+        return problema;
     }
 
-    public void setListaProblemas(List<Problema> listaProblemas) {
-        this.listaProblemas = listaProblemas;
+    public void setproblema(Problema problema) {
+        this.problema = problema;
     }
 
     public Pagamento getPagamento() {
@@ -103,12 +120,11 @@ public class Servico {
     }
 
     public void executar(){
-        for(Problema problema: listaProblemas){
         System.out.println("Problema "+problema.getDescricao() +" resolvido!");
-        }
     }
 
     public void pagar(double valor){
+<<<<<<< Updated upstream
         if(pago){
             pagamento.pagar(valor);
             this.pago = true;
@@ -116,4 +132,22 @@ public class Servico {
         }
         System.out.printf("Pagamento de R$%.2f não efetuado por %s", valor, cliente.getNome());
     }
+=======
+        if(pagamento == null){
+            System.out.println("Forma de pagamento não definida!");
+        }
+        else {
+            pagamento.pagar(valor);
+            this.pago = true;
+        }
+    }
+
+    /* corrigir pagamento para resolver o problema de pagamento == null;
+        sobrecarga
+        adicionar pagamentopix e pagamentocredito em dois construtores diferentes para que aceite as duas formas de pagamento e o pagamento não fique null
+
+     */
+
+
+>>>>>>> Stashed changes
 }
