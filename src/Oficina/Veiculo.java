@@ -78,4 +78,15 @@ public abstract class Veiculo {
     public abstract void descricao();
     public abstract void ligar();
     public abstract void desligar();
+
+
+    @Override
+    public String toString() {
+        return "Veiculo{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", motor='" + motor + '\'' +
+                ", ano='" + ano + '\'' +
+                '}';
+    }
 }

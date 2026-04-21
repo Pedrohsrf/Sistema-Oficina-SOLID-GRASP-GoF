@@ -12,7 +12,7 @@ public class Servico {
     private Funcionario funcionario;
     private Cliente cliente;
 
-    public Servico(int idServico, String nome, String codigoServico, double preco, boolean pago, Veiculo veiculoTratado, Problema problema, Funcionario funcionario) {
+    public Servico(int idServico, String nome, String codigoServico, double preco, boolean pago, Veiculo veiculoTratado, Problema problema, Funcionario funcionario, Cliente cliente) {
         this.idServico = idServico;
         this.nome = nome;
         this.codigoServico = codigoServico;
@@ -23,7 +23,7 @@ public class Servico {
         this.problema = problema;
         this.cliente = cliente;
     }
-    public Servico(int idServico, double preco, Veiculo veiculoTratado, Problema problema, Funcionario funcionario) {
+    public Servico(int idServico, double preco, Veiculo veiculoTratado, Problema problema, Funcionario funcionario, Cliente cliente) {
         this.idServico = idServico;
         this.nome = nome;
         this.codigoServico = codigoServico;
@@ -33,6 +33,7 @@ public class Servico {
         this.problema = problema;
         this.funcionario = funcionario;
         this.pago = false;
+        this.cliente = cliente;
     }
 
     public int getIdServico() {
@@ -112,18 +113,21 @@ public class Servico {
     }
 
     public void pagar(double valor){
-        if(pago){
-            pagamento.pagar(valor);
-            this.pago = true;
-            System.out.printf("Pago com sucesso por %s id: %d",cliente.getNome(), cliente.getVeiculo());
-        }
-        System.out.printf("Pagamento de R$%.2f não efetuado por %s", valor, cliente.getNome());
         if(pagamento == null){
             System.out.println("Forma de pagamento não definida!");
         }
         else {
-            pagamento.pagar(valor);
+            double total = valor - cliente.getSaldo();
+            double saldoAtual = cliente.getSaldo() - valor;
+            if(saldoAtual > 0){
+                cliente.setSaldo(saldoAtual);
+            }else{
+                cliente.setSaldo(0);
+            }
+            pagamento.pagar(total);
             this.pago = true;
+            System.out.printf("Pago com sucesso por %s Veiculo: %s",cliente.getNome(), cliente.getVeiculo());
+            System.out.printf("\nSeu saldo atual é: %.2f" ,cliente.getSaldo());
         }
     }
 }
