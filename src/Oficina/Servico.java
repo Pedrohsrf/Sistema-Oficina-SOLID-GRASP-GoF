@@ -32,7 +32,6 @@ public class Servico {
         this.veiculoTratado = veiculoTratado;
         this.problema = problema;
         this.funcionario = funcionario;
-        this.pago = false;
         this.cliente = cliente;
     }
 
@@ -110,6 +109,7 @@ public class Servico {
 
     public void executar(){
         System.out.println("Problema "+problema.getDescricao() +" resolvido!");
+
     }
 
     public void pagar(double valor){
