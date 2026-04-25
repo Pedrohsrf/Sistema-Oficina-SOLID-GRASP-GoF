@@ -11,100 +11,85 @@ public class Servico {
     private Pagamento pagamento;
     private Funcionario funcionario;
     private Cliente cliente;
+    private String pecasTrocadas;
 
-    public Servico(int idServico, String nome, String codigoServico, double preco, boolean pago, Veiculo veiculoTratado, Problema problema, Funcionario funcionario, Cliente cliente) {
-        this.idServico = idServico;
-        this.nome = nome;
-        this.codigoServico = codigoServico;
-        this.preco = preco;
+
+    protected Servico(ServicoBuilder builder) {
+        this.idServico = builder.getIdServico();
+        this.nome = builder.getNome();
+        this.codigoServico = builder.getCodigoServico();
+        this.preco = builder.getPreco();
+        this.veiculoTratado = builder.getVeiculoTratado();
+        this.problema = builder.getProblema();
+        this.funcionario = builder.getFuncionario();
+        this.cliente = builder.getCliente();
         this.pago = false;
-        this.veiculoTratado = veiculoTratado;
-        this.funcionario = funcionario;
-        this.problema = problema;
-        this.cliente = cliente;
-    }
-    public Servico(int idServico, double preco, Veiculo veiculoTratado, Problema problema, Funcionario funcionario, Cliente cliente) {
-        this.idServico = idServico;
-        this.nome = nome;
-        this.codigoServico = codigoServico;
-        this.preco = preco;
-        this.pago = false;
-        this.veiculoTratado = veiculoTratado;
-        this.problema = problema;
-        this.funcionario = funcionario;
-        this.cliente = cliente;
+        this.pecasTrocadas = builder.getPecasTrocadas();
     }
 
-    public int getIdServico() {
-        return idServico;
-    }
 
-    public void setIdServico(int idServico) {
-        this.idServico = idServico;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCodigoServico() {
-        return codigoServico;
-    }
-
-    public void setCodigoServico(String codigoServico) {
-        this.codigoServico = codigoServico;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    public boolean isPago() {
-        return pago;
-    }
-
-    public void setPago(boolean pago) {
-        this.pago = pago;
-    }
-
-    public Veiculo getVeiculoTratado() {
-        return veiculoTratado;
-    }
-
-    public void setVeiculoTratado(Veiculo veiculoTratado) {
-        this.veiculoTratado = veiculoTratado;
-    }
-
-    public Problema getproblema() {
-        return problema;
-    }
-
-    public void setproblema(Problema problema) {
-        this.problema = problema;
+    public int getIdServico() { return idServico; }
+    public String getNome() { return nome; }
+    public String getCodigoServico() { return codigoServico; }
+    public double getPreco() { return preco; }
+    public Veiculo getVeiculoTratado() { return veiculoTratado; }
+    public Problema getProblema() { return problema; }
+    public Funcionario getFuncionario() { return funcionario; }
+    public Cliente getCliente() { return cliente; }
+    public String getPecasTrocadas() {
+        return pecasTrocadas;
     }
 
     public Pagamento getPagamento() {
         return pagamento;
     }
 
+    public boolean isPago() {
+        return pago;
+    }
+
+    public void setIdServico(int idServico) {
+        this.idServico = idServico;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCodigoServico(String codigoServico) {
+        this.codigoServico = codigoServico;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public void setPago(boolean pago) {
+        this.pago = pago;
+    }
+
+    public void setVeiculoTratado(Veiculo veiculoTratado) {
+        this.veiculoTratado = veiculoTratado;
+    }
+
+    public void setProblema(Problema problema) {
+        this.problema = problema;
+    }
+
     public void setPagamento(Pagamento pagamento) {
         this.pagamento = pagamento;
     }
 
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
-
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setPecasTrocadas(String pecasTrocadas) {
+        this.pecasTrocadas = pecasTrocadas;
     }
 
     public void executar(){
@@ -126,7 +111,7 @@ public class Servico {
             }
             pagamento.pagar(total);
             this.pago = true;
-            System.out.printf("Pago com sucesso por %s Veiculo: %s",cliente.getNome(), cliente.getVeiculo());
+            System.out.printf("Pago com sucesso por Cliente: %s | Veiculo: %s",cliente.getNome(), cliente.getVeiculo());
             System.out.printf("\nSeu saldo atual é: %.2f" ,cliente.getSaldo());
         }
     }

@@ -27,11 +27,12 @@ public class Main {
                     switch (problema) {
                         case 1:
                             Problema bateriaFalhando = new Problema("Bateria falhando");
-                            Servico bateria = new Servico(1, "Troca de bateria", "001", 200.00, false, carro, bateriaFalhando, cleiton, Ronaldo);
+                            Servico bateria = new ServicoBuilder(01, "Troca de bateria", 200.00, carro, bateriaFalhando, cleiton, Ronaldo)
+                                    .build();
                             System.out.printf("Ok! será realizado o servico: %s\n", bateria.getNome());
-
-                            oficina.atribuirERealizarServico(cleiton, bateria);
                             Thread.sleep(3000);
+                            oficina.atribuirERealizarServico(cleiton, bateria);
+                            Thread.sleep(2000);
                             System.out.println("\nDigite a forma que deseja realizar o pagamento" +
                                     "\n1-Pix" +
                                     "\n2-Crédito\nSua resposta: ");
@@ -48,10 +49,12 @@ public class Main {
                             break;
                         case 2:
                             Problema oleoFiltro = new Problema("Óleo e filtro vazando");
-                            Servico trocaOleo = new Servico(02, "Troca de óleo e filtro", "002", 150.00, false, carro, oleoFiltro, robson, Ronaldo);
+                            Servico trocaOleo = new ServicoBuilder(02, "Troca de óleo e filtro", 150.00, carro, oleoFiltro, robson, Ronaldo)
+                                    .build();
                             System.out.printf("Ok! será realizado o servico: %s\n", trocaOleo.getNome());
-                            oficina.atribuirERealizarServico(robson, trocaOleo);
                             Thread.sleep(3000);
+                            oficina.atribuirERealizarServico(robson, trocaOleo);
+                            Thread.sleep(2000);
                             System.out.println("\nDigite a forma que deseja realizar o pagamento" +
                                     "\n1-Pix" +
                                     "\n2-Crédito\nSua resposta: ");
@@ -72,10 +75,14 @@ public class Main {
 
                         case 3:
                             Problema pneuFurado = new Problema("Pneu furado");
-                            Servico trocaPneu = new Servico(03, "Troca de pneu", "003", 120.00, false, carro, pneuFurado, cleiton, Ronaldo);
+                            Servico trocaPneu = new ServicoBuilder(03, "Troca de pneu", 120.00, carro, pneuFurado, cleiton, Ronaldo)
+                                    .pecasTrocadas("Pneu")
+                                    .build();
                             System.out.printf("Ok! será realizado o servico: %s\n", trocaPneu.getNome());
-                            oficina.atribuirERealizarServico(cleiton, trocaPneu);
+                            System.out.println("Pecas Trocadas: "+trocaPneu.getPecasTrocadas());
                             Thread.sleep(3000);
+                            oficina.atribuirERealizarServico(cleiton, trocaPneu);
+                            Thread.sleep(2000);
                             System.out.println("\nDigite a forma que deseja realizar o pagamento" +
                                     "\n1-Pix" +
                                     "\n2-Crédito\nSua resposta: ");
@@ -95,10 +102,14 @@ public class Main {
 
                         case 4:
                             Problema pastilhaDesgastada = new Problema("Pastilha de freio desgastada");
-                            Servico trocaPastilha = new Servico(04, "Troca de pastilha de freio", "004", 180.00, false, carro, pastilhaDesgastada, robson, Ronaldo);
+                            Servico trocaPastilha = new ServicoBuilder(04, "Troca de pastilha de freio",  180.00, carro, pastilhaDesgastada, robson, Ronaldo)
+                                    .pecasTrocadas("Pastilhas de freio")
+                                    .build();
                             System.out.printf("Ok! será realizado o servico: %s\n", trocaPastilha.getNome());
-                            oficina.atribuirERealizarServico(robson, trocaPastilha);
+                            System.out.println("Pecas Trocadas: "+trocaPastilha.getPecasTrocadas());
                             Thread.sleep(3000);
+                            oficina.atribuirERealizarServico(robson, trocaPastilha);
+                            Thread.sleep(2000);
                             System.out.println("\nDigite a forma que deseja realizar o pagamento" +
                                     "\n1-Pix" +
                                     "\n2-Crédito\nSua resposta: ");
@@ -118,10 +129,12 @@ public class Main {
 
                         case 5:
                             Problema desalinhado = new Problema("Descalibrado/desalinhado");
-                            Servico alinhamento = new Servico(05, "Alinhamento e balanceamento", "005", 100.00, false, carro, desalinhado, cleiton, Ronaldo);
+                            Servico alinhamento = new ServicoBuilder(05, "Alinhamento e balanceamento", 100.00, carro, desalinhado, cleiton, Ronaldo)
+                                    .build();
                             System.out.printf("Ok! será realizado o servico: %s\n", alinhamento.getNome());
-                            oficina.atribuirERealizarServico(cleiton, alinhamento);
                             Thread.sleep(3000);
+                            oficina.atribuirERealizarServico(cleiton, alinhamento);
+                            Thread.sleep(2000);
                             System.out.println("\nDigite a forma que deseja realizar o pagamento" +
                                     "\n1-Pix" +
                                     "\n2-Crédito\nSua resposta: ");
@@ -155,10 +168,12 @@ public class Main {
                     switch (problema) {
                         case 1:
                             Problema bateriaFalhando = new Problema("Bateria falhando");
-                            Servico bateria = new Servico(01, "Troca de bateria", "001", 200.00, false, moto, bateriaFalhando, cleiton, Ronaldo);
+                            Servico bateria = new ServicoBuilder(01, "Troca de bateria", 200.00, moto, bateriaFalhando, cleiton, Ronaldo)
+                                    .build();
                             System.out.printf("Ok! será realizado o servico: %s\n", bateria.getNome());
-                            oficina.atribuirERealizarServico(cleiton, bateria);
                             Thread.sleep(3000);
+                            oficina.atribuirERealizarServico(cleiton, bateria);
+                            Thread.sleep(2000);
                             System.out.println("\nDigite a forma que deseja realizar o pagamento" +
                                     "\n1-Pix" +
                                     "\n2-Crédito\nSua resposta: ");
@@ -175,10 +190,12 @@ public class Main {
                             break;
                         case 2:
                             Problema oleoFiltro = new Problema("Óleo e filtro vazando");
-                            Servico trocaOleo = new Servico(02, "Troca de óleo e filtro", "002", 150.00, false, moto, oleoFiltro, cleiton, Ronaldo);
+                            Servico trocaOleo = new ServicoBuilder(02, "Troca de óleo e filtro", 150.00,  moto, oleoFiltro, cleiton, Ronaldo)
+                                    .build();
                             System.out.printf("Ok! será realizado o servico: %s\n", trocaOleo.getNome());
-                            oficina.atribuirERealizarServico(robson, trocaOleo);
                             Thread.sleep(3000);
+                            oficina.atribuirERealizarServico(robson, trocaOleo);
+                            Thread.sleep(2000);
                             System.out.println("\nDigite a forma que deseja realizar o pagamento" +
                                     "\n1-Pix" +
                                     "\n2-Crédito\nSua resposta: ");
@@ -199,10 +216,14 @@ public class Main {
 
                         case 3:
                             Problema pneuFurado = new Problema("Pneu furado");
-                            Servico trocaPneu = new Servico(03, "Troca de pneu", "003", 120.00, false, moto, pneuFurado, robson, Ronaldo);
+                            Servico trocaPneu = new ServicoBuilder(03, "Troca de pneu",  120.00, moto, pneuFurado, robson, Ronaldo)
+                                    .pecasTrocadas("Pneu")
+                                    .build();
                             System.out.printf("Ok! será realizado o servico: %s\n", trocaPneu.getNome());
-                            oficina.atribuirERealizarServico(cleiton, trocaPneu);
+                            System.out.println("Pecas Trocadas: "+trocaPneu.getPecasTrocadas());
                             Thread.sleep(3000);
+                            oficina.atribuirERealizarServico(cleiton, trocaPneu);
+                            Thread.sleep(2000);
                             System.out.println("\nDigite a forma que deseja realizar o pagamento" +
                                     "\n1-Pix" +
                                     "\n2-Crédito\nSua resposta: ");
@@ -222,10 +243,14 @@ public class Main {
 
                         case 4:
                             Problema pastilhaDesgastada = new Problema("Pastilha de freio desgastada");
-                            Servico trocaPastilha = new Servico(04, "Troca de pastilha de freio", "004", 180.00, false, moto, pastilhaDesgastada, cleiton, Ronaldo);
+                            Servico trocaPastilha = new ServicoBuilder(04, "Troca de pastilha de freio", 180.00, moto, pastilhaDesgastada, cleiton, Ronaldo)
+                                    .pecasTrocadas("Pastilhas de freio")
+                                    .build();
                             System.out.printf("Ok! será realizado o servico: %s\n", trocaPastilha.getNome());
-                            oficina.atribuirERealizarServico(robson, trocaPastilha);
+                            System.out.println("Pecas Trocadas: "+trocaPastilha.getPecasTrocadas());
                             Thread.sleep(3000);
+                            oficina.atribuirERealizarServico(robson, trocaPastilha);
+                            Thread.sleep(2000);
                             System.out.println("\nDigite a forma que deseja realizar o pagamento" +
                                     "\n1-Pix" +
                                     "\n2-Crédito\nSua resposta: ");
@@ -245,10 +270,12 @@ public class Main {
 
                         case 5:
                             Problema desalinhado = new Problema("Descalibrado/desalinhado");
-                            Servico alinhamento = new Servico(05, "Alinhamento e balanceamento", "005", 100.00, false, moto, desalinhado, robson, Ronaldo);
+                            Servico alinhamento = new ServicoBuilder(05, "Alinhamento e balanceamento", 100.00, moto, desalinhado, robson, Ronaldo)
+                                    .build();
                             System.out.printf("Ok! será realizado o servico: %s\n", alinhamento.getNome());
-                            oficina.atribuirERealizarServico(cleiton, alinhamento);
                             Thread.sleep(3000);
+                            oficina.atribuirERealizarServico(cleiton, alinhamento);
+                            Thread.sleep(2000);
                             System.out.println("\nDigite a forma que deseja realizar o pagamento" +
                                     "\n1-Pix" +
                                     "\n2-Crédito\nSua resposta: ");
