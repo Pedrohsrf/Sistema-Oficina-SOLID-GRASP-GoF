@@ -3,7 +3,7 @@
 Sistema desenvolvido em Java para gerenciamento de uma oficina mecânica, aplicando orientação a objetos e padrões de projeto GoF.
 
 ## 🚧 Status
-Em desenvolvimento
+Em desenvolvimento(Iterator)
 
 ## ⚙️ Tecnologias
 - Java
