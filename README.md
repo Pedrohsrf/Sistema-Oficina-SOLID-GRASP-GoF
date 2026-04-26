@@ -7,7 +7,7 @@ Em desenvolvimento
 
 ## ⚙️ Tecnologias
 - Java
-- Padrões de Projeto GoF (Facade, Strategy, Builder, Iterator)
+- Padrões de Projeto GoF (Facade, Builder, Iterator)
 
 ## 👨‍💻 Autor
 Feito por Pedro Henrique, Matheus Lopes e Davi Ribeiro
